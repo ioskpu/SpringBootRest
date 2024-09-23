@@ -6,16 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "fabricante")
-public class Maker {
+@Table(name = "producto")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +23,13 @@ public class Maker {
     @Column(name = "nombre")
     private String name;
 
-    @OneToMany(mappedBy = "maker", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<Product> productList = new ArrayList<>();
+    @Column(name = "descripcion")
+    private String description;
+
+    @Column(name = "precio")
+    private BigDecimal price;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_fabricante", nullable = false)
+    private Maker maker;
 }
