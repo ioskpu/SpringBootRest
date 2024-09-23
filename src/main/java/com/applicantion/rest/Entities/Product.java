@@ -29,7 +29,7 @@ public class Product {
     @Column(name = "precio")
     private BigDecimal price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_fabricante", nullable = false)
     private Maker maker;
 }
