@@ -26,10 +26,6 @@ public class ProductDAOImpl implements IProductDAO {
         return productRepository.findById(id);
     }
 
-    @Override
-    public List<Product> findByMaker(Long id) {
-        return productRepository.findByMaker(id);
-    }
 
     @Override
     public List<Product> findByPriceInRange(BigDecimal min, BigDecimal max) {

@@ -21,5 +21,5 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     List<Product> findProductByPriceBetween(BigDecimal min, BigDecimal max);
 
     //metodo para busqueda por maracas
-    List<Product> findByMaker(Long id);
+    //List<Product> findByMaker(Long id);
 }

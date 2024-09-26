@@ -12,7 +12,6 @@ public interface IProductDAO {
 
     Optional<Product> findById(Long id);
 
-    List<Product> findByMaker(Long id);
 
     List<Product> findByPriceInRange(BigDecimal min, BigDecimal max);
 

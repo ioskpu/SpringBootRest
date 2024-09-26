@@ -26,10 +26,10 @@ public class ProductServicesImpl implements IProductServices {
         return productDAO.findById(id);
     }
 
-    @Override
+    /*@Override
     public List<Product> findByMaker(Long id) {
         return productDAO.findByMaker(id);
-    }
+    }*/
 
     @Override
     public List<Product> findByPriceInRange(BigDecimal min, BigDecimal max) {

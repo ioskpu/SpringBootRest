@@ -1,5 +1,6 @@
 package com.applicantion.rest.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,5 +32,6 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_fabricante", nullable = false)
+    @JsonIgnore
     private Maker maker;
 }

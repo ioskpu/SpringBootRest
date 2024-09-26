@@ -1,16 +1,16 @@
 package com.applicantion.rest.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.annotation.Resource;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Setter
 @Getter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -25,5 +25,7 @@ public class Maker {
     private String name;
 
     @OneToMany(mappedBy = "maker", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnore
     private List<Product> productList = new ArrayList<>();
+
 }
